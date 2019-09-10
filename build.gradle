@@ -28,7 +28,7 @@ jlink {
 
     }
     forceMerge('log4j-api')
-    javaHome = "/usr/lib/jvm/default/"
+    //javaHome = "/usr/lib/jvm/default/"
 }
 
 applicationDefaultJvmArgs = ['--add-opens', 'java.base/java.lang=com.google.guice']
