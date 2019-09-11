@@ -1,3 +1,5 @@
+
+
 version: 1.0.{build}
 
 image:
@@ -7,6 +9,20 @@ image:
 - Visual Studio 2019
 
 platform: x64
+
+init:
+
+- ps: >-
+
+    if ($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2019"){
+
+
+
+    $env:JAVA_HOME="C:\Program Files\Java\jdk12"
+
+
+
+    }
 
 environment:
 
@@ -39,3 +55,5 @@ deploy:
   on:
 
     branch: master
+
+
