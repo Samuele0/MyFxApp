@@ -1,6 +1,7 @@
 
 
 version: 1.0.{build}
+skip_tags: true
 
 platform: x64
 
@@ -16,7 +17,7 @@ build_script:
 
 artifacts:
 
-- path: build/image.zip
+- path: build/distributions
 
   name: Application
 
@@ -34,8 +35,9 @@ deploy:
 
   artifact: Application
 
+  force_update: true
+
   on:
 
     branch: master
-
 
