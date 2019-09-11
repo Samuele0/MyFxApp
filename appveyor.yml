@@ -1,0 +1,23 @@
+version: 1.0.{build}
+
+image:
+
+- Ubuntu
+
+- Visual Studio 2019
+
+platform: x64
+
+install:
+
+- ps: gradle jlinkZip
+
+build_script:
+
+- ps: ''
+
+artifacts:
+
+- path: build/image.zip
+
+  name: Application
