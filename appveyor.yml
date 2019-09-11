@@ -10,19 +10,11 @@ image:
 
 platform: x64
 
-init:
-
-- ps: >-
-
-    if ($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2019"){
-
-
-
-    $env:JAVA_HOME="C:\Program Files\Java\jdk12"
-
-
-
-    }
+environment:
+  matrix:
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
+      JAVA_HOME: C:\Program Files\Java\jdk12
+    - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
 
 build_script:
 
